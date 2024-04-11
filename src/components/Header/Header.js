@@ -1,31 +1,33 @@
+import { Link } from "react-router-dom";
+
 const Header = () => {
   return (
     <header id="site-header">
       {/* <!-- Navigation --> */}
       <nav class="navbar">
         <section class="navbar-dashboard">
-          <a href="#">Dashboard</a>
+          <Link to="/">Dashboard</Link>
           {/* <!-- Guest users --> */}
           <div id="guest">
-            <a class="button" href="#">
+            <Link class="button" to="/login">
               Login
-            </a>
-            <a class="button" href="#">
+            </Link>
+            <Link class="button" to="/register">
               Register
-            </a>
+            </Link>
           </div>
           {/* <!-- Logged-in users --> */}
           <div id="user">
             <span>Welcome, email</span>
-            <a class="button" href="#">
+            <Link class="button" to="/my-pets">
               My Pets
-            </a>
-            <a class="button" href="#">
+            </Link>
+            <Link class="button" to="/create-page">
               Add Pet
-            </a>
-            <a class="button" href="#">
+            </Link>
+            <Link class="button" to="/logout">
               Logout
-            </a>
+            </Link>
           </div>
         </section>
       </nav>
