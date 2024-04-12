@@ -1,7 +1,25 @@
+import * as petServices from "../../services/petServices";
+import { useNavigate } from "react-router-dom";
+
 const CreatePage = () => {
+  const navigate = useNavigate();
+
+  const onPetCreate = e => {
+    e.preventDefault();
+
+    let formData = new FormData(e.currentTarget);
+    let name = formData.get("name");
+    let description = formData.get("description");
+    let imageUrl = formData.get("imageUrl");
+    let type = formData.get("type");
+
+    petServices.create({ name, description, imageUrl, type }).then(result => {
+      navigate("/");
+    });
+  };
   return (
     <section id="create-page" class="create">
-      <form id="create-form" action="" method="">
+      <form id="create-form" method="POST" onSubmit={onPetCreate}>
         <fieldset>
           <legend>Add new Pet</legend>
           <p class="field">
@@ -38,6 +56,7 @@ const CreatePage = () => {
                 <option value="cat">Cat</option>
                 <option value="dog">Dog</option>
                 <option value="parrot">Parrot</option>
+                <option value="monkey">Monkey</option>
                 <option value="reptile">Reptile</option>
                 <option value="other">Other</option>
               </select>
