@@ -1,4 +1,6 @@
+import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
+import * as authService from "./services/authService";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import CreatePage from "./components/CreatePage/CreatePage";
@@ -10,9 +12,22 @@ import RegisterPage from "./components/RegisterPage/RegisterPage";
 import MyPetsPage from "./components/MyPetsPage/MyPetsPage";
 
 function App() {
+  const [userInfo, setUserInfo] = useState({
+    isAuthenticated: false,
+    username: "",
+  });
+
+  useEffect(() => {
+    let user = authService.getUser();
+
+    setUserInfo({
+      isAuthenticated: Boolean(user),
+      user,
+    });
+  }, []);
   return (
     <div id="container">
-      <Header />
+      <Header {...userInfo} />
       {/* <!-- Main Content --> */}
       <main id="site-content">
         <Routes>
