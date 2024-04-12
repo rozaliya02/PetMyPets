@@ -25,6 +25,13 @@ function App() {
       user,
     });
   }, []);
+
+  const onLogin = username => {
+    setUserInfo({
+      isAuthenticated: true,
+      user: username,
+    });
+  };
   return (
     <div id="container">
       <Header {...userInfo} />
@@ -32,7 +39,7 @@ function App() {
       <main id="site-content">
         <Routes>
           <Route path="/" element={<Dashboard />} />
-          <Route path="/login" element={<LoginPage />} />
+          <Route path="/login" element={<LoginPage onLogin={onLogin} />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/create-page" element={<CreatePage />} />
           <Route path="/edit-page" element={<EditPage />} />
