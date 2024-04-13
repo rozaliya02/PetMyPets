@@ -44,7 +44,7 @@ function App() {
           <Route path="/create-page" element={<CreatePage />} />
           <Route path="/edit-page" element={<EditPage />} />
           <Route path="/my-pets" element={<MyPetsPage />} />
-          <Route path="/details" element={<DetailsPage />} />
+          <Route path="/details/:petId" element={<DetailsPage />} />
         </Routes>
       </main>
 

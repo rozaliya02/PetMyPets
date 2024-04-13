@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 const PetCard = ({ pet }) => {
   return (
     <li class="otherPet">
@@ -6,9 +7,9 @@ const PetCard = ({ pet }) => {
       <p class="img">
         <img src={pet.imageUrl} />
       </p>
-      <a class="button" href="#">
+      <Link class="button" to={`/details/${pet._id}`}>
         Details
-      </a>
+      </Link>
     </li>
   );
 };

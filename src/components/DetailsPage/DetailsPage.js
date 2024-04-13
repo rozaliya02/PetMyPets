@@ -1,11 +1,28 @@
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import * as petServices from "../../services/petServices";
+
 const DetailsPage = () => {
+  const [pet, setPet] = useState({});
+  const { petId } = useParams();
+
+  useEffect(() => {
+    async function fetchData() {
+      let petResult = await petServices.getOne(petId);
+      console.log(petResult);
+      setPet(petResult);
+    }
+
+    fetchData();
+  }, []);
+
   return (
     <section id="details-page" class="details">
       <div class="pet-information">
-        <h3>Name: Milo</h3>
-        <p class="type">Type: dog</p>
+        <h3>{pet.name}</h3>
+        <p class="type">Type: {pet.type}</p>
         <p class="img">
-          <img src="/images/dog.png" />
+          <img src={pet.imageUrl} />
         </p>
         <div class="actions">
           {/* <!-- Edit/Delete buttons ( Only for creator of this pet )  --> */}
@@ -32,15 +49,7 @@ const DetailsPage = () => {
       </div>
       <div class="pet-description">
         <h3>Description:</h3>
-        <p>
-          Today, some dogs are used as pets, others are used to help humans do
-          their work. They are a popular pet because they are usually playful,
-          friendly, loyal and listen to humans. Thirty million dogs in the
-          United States are registered as pets.[5] Dogs eat both meat and
-          vegetables, often mixed together and sold in stores as dog food. Dogs
-          often have jobs, including as police dogs, army dogs, assistance dogs,
-          fire dogs, messenger dogs, hunting dogs, herding dogs, or rescue dogs.
-        </p>
+        <p>{pet.description}</p>
       </div>
     </section>
   );
