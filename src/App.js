@@ -10,6 +10,7 @@ import EditPage from "./components/EditPage/EditPage";
 import LoginPage from "./components/LoginPage/LoginPage";
 import RegisterPage from "./components/RegisterPage/RegisterPage";
 import MyPetsPage from "./components/MyPetsPage/MyPetsPage";
+import Logout from "./components/Logout/Logout";
 
 function App() {
   const [userInfo, setUserInfo] = useState({
@@ -32,6 +33,14 @@ function App() {
       user: username,
     });
   };
+
+  const onLogout = username => {
+    setUserInfo({
+      isAuthenticated: false,
+      user: "",
+    });
+  };
+
   return (
     <div id="container">
       <Header {...userInfo} />
@@ -40,6 +49,7 @@ function App() {
         <Routes>
           <Route path="/*" element={<Dashboard />} />
           <Route path="/login" element={<LoginPage onLogin={onLogin} />} />
+          <Route path="/logout" element={<Logout onLogout={onLogout} />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/create-page" element={<CreatePage />} />
           <Route path="/edit-page" element={<EditPage />} />
