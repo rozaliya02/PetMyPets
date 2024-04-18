@@ -1438,39 +1438,42 @@
     sessions: {},
   };
   var seedData = {
-    motorcycles: {
+    albums: {
+      "ff436770-76c5-40e2-b231-77409eda7a61": {
+        _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
+        name: "In These Silent Days",
+        artist: "Brandi Carlile",
+        genre: "Low Country Sound Music",
+        imgUrl: "/images/BrandiCarlile.png",
+        price: "12.80",
+        releaseDate: "October 1, 2021",
+        description:
+          "Upon release, In These Silent Days received positive reviews from critics. At Metacritic, which assigns a normalized rating out of 100 to reviews from mainstream critics, the album has an average score of 87 out of 100, which indicates 'universal acclaim'.",
+        _createdOn: 1617194128618,
+      },
       "1840a313-225c-416a-817a-9954d4609f7c": {
         _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-        model: "Honda Hornet",
-        imageUrl: "/images/Honda Hornet.png",
-        year: "2006",
-        mileage: "50000",
-        contact: "0881234567",
-        about:
-          "The Honda Hornet 2006 is a popular naked bike renowned for its nimble handling, reliable performance, and a sleek design that appeals to urban riders and commuters alike.",
+        name: "Melodrama",
+        artist: "Lorde",
+        genre: "Pop Music",
+        imgUrl: "/images/Lorde.jpg",
+        price: "7.33",
+        releaseDate: "June 16, 2017",
+        description:
+          "Melodrama is the second studio album by New Zealand singer-songwriter Lorde. It was released on 16 June 2017 by Lava and Republic Records and distributed through Universal.",
         _createdOn: 1617194210928,
       },
       "126777f5-3277-42ad-b874-76d043b069cb": {
         _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-        model: "Kawasaki er6n",
-        imageUrl: "/images/Kawasaki er6n.png",
-        year: "2016",
-        mileage: "10000",
-        contact: "0884567123",
-        about:
-          "The Yamaha MT-07 2017 model is a thrilling and versatile naked motorcycle equipped with a powerful twin-cylinder engine, attractive styling, and advanced features, making it a favorite among riders seeking an exhilarating and enjoyable ride.",
+        name: "The Dark Side of the Moon",
+        artist: "Pink Floyd",
+        genre: "Rock Music",
+        imgUrl: "/images/pinkFloyd.jpg",
+        price: "28.75",
+        releaseDate: "March 1, 1973",
+        description:
+          "The Dark Side of the Moon is the eighth studio album by the English rock band Pink Floyd, released on 1 March 1973 by Harvest Records.",
         _createdOn: 1617194295474,
-      },
-      "136777f5-3277-42ad-b874-76d043b069cb": {
-        _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-        model: "Yamaha mt 07",
-        imageUrl: "/images/Yamaha mt 07.png",
-        year: "2017",
-        mileage: "15000",
-        contact: "0886714523",
-        about:
-          "The Kawasaki ER6n 2016 boasts a well-engineered package, combining a responsive parallel-twin engine, comfortable ergonomics, and a modern design, making it a capable and practical choice for both everyday riding and spirited adventures.",
-        _createdOn: 1617194295480,
       },
     },
   };

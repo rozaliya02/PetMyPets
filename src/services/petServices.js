@@ -1,4 +1,4 @@
-const baseUrl = "https://custom-service-9a5ad96c506f.herokuapp.com/jsonstore/";
+const baseUrl = '"http://localhost:3030/jsonstore';
 
 export const getAll = async () => {
   let response = await fetch(`${baseUrl}/pets`);

@@ -13,10 +13,8 @@ const LoginPage = ({ onLogin }) => {
 
     authService.login(email, password).then(authData => {
       console.log(authData);
-      console.log("logged");
     });
     onLogin(email);
-
     navigate("/");
   }
 
